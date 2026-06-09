@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Hamish Geddes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">HG</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <div class="hero">
+    <div class="hero-eyebrow">Let's connect</div>
+    <h1>Don't be a<br /><em>stranger.</em></h1>
+    <p class="hero-sub">
+      I'd love to hear from you. Whether you want to talk about a project, share an idea, or just say hi — reach out. I read everything.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Find me here</div>
+    <ul class="contact-links">
+      <li>
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 7 10-7"/>
+          </svg>
+        </div>
+        <a href="mailto:hello@hamishgeddes.com">
+          <div class="contact-meta">
+            <strong>hello@hamishgeddes.com</strong>
+            <span>Best way to reach me — I reply to everything</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <a href="https://linkedin.com/in/hamishgeddes" target="_blank" rel="noopener">
+          <div class="contact-meta">
+            <strong>LinkedIn</strong>
+            <span>Connect professionally</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-label">Send a message</div>
+    <form class="form" id="contactForm">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+
+      <button type="submit" class="btn-submit">Send message →</button>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 Hamish Geddes</span>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('Message from ' + name);
+    const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' <' + email + '>');
+    window.location.href = 'mailto:hello@hamishgeddes.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
